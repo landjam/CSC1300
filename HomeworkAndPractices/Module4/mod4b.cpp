@@ -21,9 +21,9 @@ int main() {
     }
 
     if (inputNum >= 20 && inputNum <= 100) {
-        cout << "This is an " << evenOdd << " number within the range of 20 to 100." << endl;
+        cout << "This is an " << evenOdd << " number between 20 and 100." << endl;
     } else {
-        cout << "This is an " << evenOdd << " number less than 20 or greater than 100." << endl;
+        cout << "This is an " << evenOdd << " number under 20 or over 100." << endl;
     }
 
     return 0;
