@@ -11,7 +11,7 @@
 using namespace std;
 
 int main() {
-    int choice, repititions, sum;
+    int choice = 0, sum = 0, repititions = 0;    
     bool doneLooping = false, mainLoop = false, skipNum = false;
 
     do {
@@ -20,25 +20,45 @@ int main() {
         repititions++;
 
         do {
+            doneLooping = false;
+            skipNum = false;
+            sum = 0;
+
             switch (choice) {
                 case 1: {
-                    cout << "\nYou chose to add every other odd number.\n\n" << endl;
+                    cout << "\nYou chose to add every other odd number." << endl;
                     doneLooping = true;
 
                     for (int i = 1; i <= 100; i++) {
-                        if (i % 2 != 0 && !skipNum) {
-                            sum += i;
-                            skipNum = true;
-                        } else {
-                            skipNum = false;
+                        if (i % 2 != 0) {
+                            if (!skipNum){
+                                sum += i;
+                                skipNum = true;
+                            } else {
+                                skipNum = false;
+                            }
                         }
                     }
 
+                    cout << "The total of adding every-other odd number from 1 to 100 is: " << sum << "\n\n";
                     break;
                 }
                 case 2: {
-                    cout << "\nYou chose to add every other even number.\n\n" << endl;
+                    cout << "\nYou chose to add every other even number." << endl;
                     doneLooping = true;
+
+                    for (int i = 2; i <= 100; i++) {
+                        if (i % 2 == 0) {
+                            if (!skipNum){
+                                sum += i;
+                                skipNum = true;
+                            } else {
+                                skipNum = false;
+                            }
+                        }
+                    }
+
+                    cout << "The total of adding every-other even number from 2 to 100 is: " << sum << "\n\n";
                     break;
                 }
                 case 3:
